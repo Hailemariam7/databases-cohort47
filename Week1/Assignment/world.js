@@ -78,6 +78,32 @@ connection.query(
   }
 );
 
+connection.query(
+  "SELECT Name FROM country ORDER BY SurfaceArea DESC LIMIT 10",
+  (err, results) => {
+    if (err) throw err;
+    console.log("8. Top 10 countries by Surface Area");
+    console.log(results);
+  }
+);
+
+connection.query(
+  "SELECT Name FROM city ORDER BY Population DESC LIMIT 10",
+  (err, results) => {
+    if (err) throw err;
+    console.log("9. Top 10 most populated cities:");
+    console.log(results);
+  }
+);
+
+connection.query("SELECT Population FROM country", (err, results) => {
+  if (err) throw err;
+  console.log("10. Population of the world:");
+  let totalPopulation = 0;
+  results.forEach((country) => (totalPopulation += country.Population));
+  console.log(totalPopulation);
+});
+
 connection.end((err) => {
   if (err) {
     console.error("Error closing the connection:", err);
