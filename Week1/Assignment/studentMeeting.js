@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "hyfuser",
   password: "MySQLpassword",
-  database: "studentMeeting.sql",
+  database: "studentMeeting",
 });
 
 connection.connect((err) => {
@@ -14,17 +14,15 @@ connection.connect((err) => {
   }
   console.log("Connected to MySQL database");
 
-  // Execute the query only after the connection has been established
   connection.query("SELECT * FROM Invitee", (err, results) => {
     if (err) {
       console.error("Error executing query:", err);
-      connection.end(); // Close the connection in case of an error
+      connection.end();
       return;
     }
     console.log("Data retrieved from Invitee table:");
     console.log(results);
 
-    // Close the connection after retrieving data
     connection.end((err) => {
       if (err) {
         console.error("Error closing connection:", err);
