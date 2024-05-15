@@ -4,7 +4,7 @@ USE studentMeeting;
 
 CREATE TABLE IF NOT EXISTS Invitee (
   invitee_no INT AUTO_INCREMENT PRIMARY KEY,
-  invitee_name VARCHAR(255),
+  invitee_name VARCHAR(255) NOT NULL,
   invited_by VARCHAR(255)
 );
 
@@ -16,10 +16,10 @@ CREATE TABLE IF NOT EXISTS Room (
 
 CREATE TABLE IF NOT EXISTS Meeting (
   meeting_no INT AUTO_INCREMENT PRIMARY KEY,
-  meeting_title VARCHAR(255),
-  starting_time DATETIME,
-  ending_time DATETIME,
-  room_no INT,
+  meeting_title VARCHAR(255) NOT NULL,
+  starting_time DATETIME NOT NULL,
+  ending_time DATETIME NOT NULL,
+  room_no INT NOT NULL,
   FOREIGN KEY (room_no) REFERENCES Room(room_no)
 );
 
