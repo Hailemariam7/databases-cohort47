@@ -1,0 +1,124 @@
+### SQL Normalization
+
+#### 1. Columns that Violate 1NF
+
+- **food_code**: Contains multiple values separated by commas (e.g., "C1, C2").
+- **food_description**: Contains multiple values separated by commas (e.g., "Curry, Cake").
+
+#### 2. Entities
+
+- **Member**: Stores information about the members.
+- **Dinner**: Stores information about the dinners.
+- **Venue**: Stores information about the venues.
+- **Food**: Stores information about the food items served at dinners.
+
+#### 3. 3NF Compliant Solution
+
+##### Tables and Columns
+
+1. **Member Table**
+
+   - **member_id**
+   - **member_name**
+   - **member_address**
+
+2. **Dinner Table**
+
+   - **dinner_id**
+   - **dinner_date**
+   - **venue_code**
+
+3. **Venue Table**
+
+   - **venue_code**
+   - **venue_description**
+
+4. **Food Table**
+
+   - **food_code**
+   - **food_description**
+
+5. **DinnerFood Table**
+
+   - **dinner_id**
+   - **food_code**
+
+6. **MemberDinner Table**
+   - **member_id**
+   - **dinner_id**
+
+---
+
+#### Member Table
+
+| member_id | member_name | member_address |
+| --------- | ----------- | -------------- |
+| 1         | Amit        | 325 Max park   |
+| 2         | Ben         | 24 Hudson lane |
+| 3         | Cristina    | 516 6th Ave    |
+| 4         | Dan         | 89 John St     |
+| 5         | Gabor       | 54 Vivaldi St  |
+| 6         | Hema        | 9 Peter St     |
+
+#### Dinner Table
+
+| dinner_id | dinner_date | venue_code |
+| --------- | ----------- | ---------- |
+| D00001001 | 2020-03-15  | B01        |
+| D00001002 | 2020-03-15  | B02        |
+| D00001003 | 2020-03-20  | B03        |
+| D00001004 | 2020-03-25  | B04        |
+| D00001005 | 2020-03-26  | B05        |
+
+#### Venue Table
+
+| venue_code | venue_description |
+| ---------- | ----------------- |
+| B01        | Grand Ball Room   |
+| B02        | Zoku Roof Top     |
+| B03        | Goat Farm         |
+| B04        | Mama's Kitchen    |
+| B05        | Hungry Hungary    |
+
+#### Food Table
+
+| food_code | food_description |
+| --------- | ---------------- |
+| C1        | Curry            |
+| C2        | Cake             |
+| S1        | Soup             |
+| P1        | Pie              |
+| T1        | Tea              |
+| M1        | Mousse           |
+| F1        | Falafel          |
+| G1        | Goulash          |
+| P2        | Pasca            |
+
+#### DinnerFood Table
+
+| dinner_id | food_code |
+| --------- | --------- |
+| D00001001 | C1        |
+| D00001001 | C2        |
+| D00001002 | S1        |
+| D00001002 | C2        |
+| D00001003 | P1        |
+| D00001003 | T1        |
+| D00001003 | M1        |
+| D00001004 | F1        |
+| D00001004 | M1        |
+| D00001005 | G1        |
+| D00001005 | P2        |
+
+#### MemberDinner Table
+
+| member_id | dinner_id |
+| --------- | --------- |
+| 1         | D00001001 |
+| 2         | D00001002 |
+| 3         | D00001002 |
+| 4         | D00001003 |
+| 1         | D00001003 |
+| 3         | D00001004 |
+| 5         | D00001005 |
+| 6         | D00001003 |
