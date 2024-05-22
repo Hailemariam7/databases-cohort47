@@ -1,17 +1,16 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
+require("dotenv").config();
 const { seedDatabase } = require("./seedDatabase.js");
-require("dotenv").config(); // Ensure you have this to load environment variables
 
-async function createEpisodeExercise(client) {
-  const newEpisode = {
-    season: 9,
-    episode: 13,
+async function createEpisodeExercise(collectionDb) {
+  const episodeData = {
+    episode: "S09E13",
     title: "MOUNTAIN HIDE-AWAY",
     elements: [
       "CIRRUS",
       "CLOUDS",
       "CONIFER",
-      "DECIDIOUS",
+      "DECIDUOUS",
       "GRASS",
       "MOUNTAIN",
       "MOUNTAINS",
@@ -21,81 +20,81 @@ async function createEpisodeExercise(client) {
       "TREES",
     ],
   };
+  const result = await collectionDb.insertOne(episodeData);
 
-  const result = await client
-    .db("databaseWeek3")
-    .collection("bob_ross_episodes")
-    .insertOne(newEpisode);
   console.log(
     `Created season 9 episode 13 and the document got the id ${result.insertedId}`
   );
 }
 
-async function findEpisodesExercises(client) {
-  const db = client.db("databaseWeek3");
-  const collection = db.collection("bob_ross_episodes");
+async function findEpisodesExercises(collectionDb) {
+  const episode2Season2 = await collectionDb.findOne({ episode: "S02E02" });
+  if (!episode2Season2) {
+    throw new Error(`Cannot find the episode ${episode2Season2}`);
+  }
+  console.log(`The title of episode 2 in season 2 is ${episode2Season2.title}`);
 
-  const episode1 = await collection.findOne({ season: 2, episode: 2 });
-  console.log(`The title of episode 2 in season 2 is ${episode1.title}`);
-
-  const episode2 = await collection.findOne({ title: "BLACK RIVER" });
+  const blackRiverEpisode = await collectionDb.findOne({
+    title: "BLACK RIVER",
+  });
+  if (!blackRiverEpisode) {
+    throw new Error(`Cannot find the episode ${blackRiverEpisode}`);
+  }
   console.log(
-    `The season and episode number of the "BLACK RIVER" episode is S${episode2.season
-      .toString()
-      .padStart(2, "0")}E${episode2.episode.toString().padStart(2, "0")}`
+    `The season and episode number of the "BLACK RIVER" episode is ${blackRiverEpisode.episode}`
   );
 
-  const episodesWithCliff = await collection
+  const cliffEpisodes = await collectionDb
     .find({ elements: "CLIFF" })
     .toArray();
-  const titlesWithCliff = episodesWithCliff.map((ep) => ep.title);
+  if (cliffEpisodes.length === 0) {
+    throw new Error(`There is no "CLIFF" painting`);
+  }
+  const cliffEpisodesTitles = cliffEpisodes.map((episode) => episode.title);
   console.log(
-    `The episodes that Bob Ross painted a CLIFF are ${titlesWithCliff.join(
+    `The episodes that Bob Ross painted a CLIFF are ${cliffEpisodesTitles.join(
       ", "
     )}`
   );
 
-  const episodesWithCliffAndLighthouse = await collection
+  const cliffAndLighthouseEpisodes = await collectionDb
     .find({ elements: { $all: ["CLIFF", "LIGHTHOUSE"] } })
     .toArray();
-  const titlesWithCliffAndLighthouse = episodesWithCliffAndLighthouse.map(
-    (ep) => ep.title
+  if (cliffAndLighthouseEpisodes.length === 0) {
+    throw new Error(`There is no "CLIFF and a LIGHTHOUSE" painting`);
+  }
+  const cliffAndLighthouseEpisodesTitles = cliffAndLighthouseEpisodes.map(
+    (episode) => episode.title
   );
   console.log(
-    `The episodes that Bob Ross painted a CLIFF and a LIGHTHOUSE are ${titlesWithCliffAndLighthouse.join(
+    `The episodes that Bob Ross painted a CLIFF and a LIGHTHOUSE is ${cliffAndLighthouseEpisodesTitles.join(
       ", "
     )}`
   );
 }
 
-async function updateEpisodeExercises(client) {
-  const db = client.db("databaseWeek3");
-  const collection = db.collection("bob_ross_episodes");
-
-  const updateResult1 = await collection.updateOne(
-    { season: 30, episode: 13 },
+async function updateEpisodeExercises(collectionDb) {
+  const result = await collectionDb.updateOne(
+    { episode: "S30E13" },
     { $set: { title: "BLUE RIDGE FALLS" } }
   );
   console.log(
-    `Ran a command to update episode 13 in season 30 and it updated ${updateResult1.modifiedCount} episodes`
+    `Ran a command to update episode 13 in season 30 and it updated ${result.modifiedCount} episodes`
   );
 
-  const updateResult2 = await collection.updateMany(
+  const updateResult = await collectionDb.updateMany(
     { elements: "BUSHES" },
     { $set: { "elements.$": "BUSH" } }
   );
   console.log(
-    `Ran a command to update all the BUSHES to BUSH and it updated ${updateResult2.modifiedCount} episodes`
+    `Ran a command to update all the BUSHES to BUSH and it updated ${updateResult.modifiedCount} episodes`
   );
 }
 
-async function deleteEpisodeExercise(client) {
-  const db = client.db("databaseWeek3");
-  const collection = db.collection("bob_ross_episodes");
-
-  const deleteResult = await collection.deleteOne({ season: 31, episode: 14 });
+async function deleteEpisodeExercise(collectionDb) {
+  const result = await collectionDb.deleteOne({ episode: "S31E14" });
   console.log(
-    `Ran a command to delete episode and it deleted ${deleteResult.deletedCount} episodes`
+    `Ran a command to delete episode and it deleted ${result.deletedCount} episodes`
   );
 }
 
@@ -105,33 +104,52 @@ async function main() {
       `You did not set up the environment variables correctly. Did you create a '.env' file and add a package to create it?`
     );
   }
-
   const client = new MongoClient(process.env.MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
     serverApi: ServerApiVersion.v1,
   });
 
   try {
     await client.connect();
-
+    const collectionDb = await collectionData(client);
     // Seed our database
     await seedDatabase(client);
 
     // CREATE
-    await createEpisodeExercise(client);
+    await createEpisodeExercise(collectionDb);
 
     // READ
-    await findEpisodesExercises(client);
+    await findEpisodesExercises(collectionDb);
 
-    // UPDATE
-    await updateEpisodeExercises(client);
+    // // UPDATE
+    await updateEpisodeExercises(collectionDb);
 
-    // DELETE
-    await deleteEpisodeExercise(client);
+    // // DELETE
+    await deleteEpisodeExercise(collectionDb);
   } catch (err) {
     console.error(err);
   } finally {
+    // Always close the connection at the end
     client.close();
   }
 }
+
+const collectionData = async (client) => {
+  const hasCollection = await client
+    .db("databaseWeek3")
+    .listCollections({ name: "bob_ross_episodes" })
+    .hasNext();
+
+  if (hasCollection) {
+    const collectionData = await client
+      .db("databaseWeek3")
+      .collection("bob_ross_episodes");
+
+    return collectionData;
+  } else {
+    throw Error("The collection `bob_ross_episodes` does not exist!");
+  }
+};
 
 main();
