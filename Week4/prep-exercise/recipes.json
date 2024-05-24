@@ -1,0 +1,139 @@
+[
+  {
+    "_id": "recipe_1",
+    "name": "Spaghetti Carbonara",
+    "cooking_time": 30,
+    "preparation_time": 15,
+    "spiciness": 2,
+    "ingredient_ids": [
+      "ingredient_1",
+      "ingredient_2",
+      "ingredient_3",
+      "ingredient_4"
+    ],
+    "direction_ids": [
+      "direction_1",
+      "direction_2",
+      "direction_3",
+      "direction_4"
+    ],
+    "category_ids": ["category_1"]
+  },
+  {
+    "_id": "recipe_2",
+    "name": "Margherita Pizza",
+    "cooking_time": 20,
+    "preparation_time": 30,
+    "spiciness": 1,
+    "ingredient_ids": [
+      "ingredient_5",
+      "ingredient_6",
+      "ingredient_7",
+      "ingredient_8"
+    ],
+    "direction_ids": ["direction_5", "direction_6", "direction_7"],
+    "category_ids": ["category_1", "category_2"]
+  },
+  {
+    "_id": "recipe_3",
+    "name": "Chicken Curry",
+    "cooking_time": 40,
+    "preparation_time": 20,
+    "spiciness": 4,
+    "ingredient_ids": ["ingredient_9", "ingredient_10", "ingredient_11"],
+    "direction_ids": ["direction_8", "direction_9", "direction_10"],
+    "category_ids": ["category_3"]
+  },
+  {
+    "_id": "recipe_4",
+    "name": "No-Bake Cheesecake",
+    "cooking_time": 0,
+    "preparation_time": 180,
+    "spiciness": 0,
+    "ingredient_ids": [
+      "ingredient_12",
+      "ingredient_13",
+      "ingredient_14",
+      "ingredient_15",
+      "ingredient_16"
+    ],
+    "direction_ids": [
+      "direction_11",
+      "direction_12",
+      "direction_13",
+      "direction_14",
+      "direction_15",
+      "direction_16"
+    ],
+    "category_ids": ["category_4", "category_5", "category_6"]
+  },
+  {
+    "_id": "recipe_5",
+    "name": "Roasted Brussels Sprouts",
+    "cooking_time": 30,
+    "preparation_time": 20,
+    "spiciness": 1,
+    "ingredient_ids": [
+      "ingredient_17",
+      "ingredient_18",
+      "ingredient_19",
+      "ingredient_20",
+      "ingredient_21"
+    ],
+    "direction_ids": [
+      "direction_17",
+      "direction_18",
+      "direction_19",
+      "direction_20"
+    ],
+    "category_ids": ["category_7", "category_8"]
+  },
+  {
+    "_id": "recipe_6",
+    "name": "Mac & Cheese",
+    "cooking_time": 15,
+    "preparation_time": 10,
+    "spiciness": 1,
+    "ingredient_ids": [
+      "ingredient_22",
+      "ingredient_23",
+      "ingredient_24",
+      "ingredient_25",
+      "ingredient_26"
+    ],
+    "direction_ids": [
+      "direction_21",
+      "direction_22",
+      "direction_23",
+      "direction_24",
+      "direction_25",
+      "direction_26",
+      "direction_27"
+    ],
+    "category_ids": ["category_6"]
+  },
+  {
+    "_id": "recipe_7",
+    "name": "Tamagoyaki Japanese Omelette",
+    "cooking_time": 5,
+    "preparation_time": 5,
+    "spiciness": 1,
+    "ingredient_ids": [
+      "ingredient_3",
+      "ingredient_20",
+      "ingredient_21",
+      "ingredient_27",
+      "ingredient_28"
+    ],
+    "direction_ids": [
+      "direction_28",
+      "direction_29",
+      "direction_30",
+      "direction_31",
+      "direction_32",
+      "direction_33",
+      "direction_34"
+    ],
+    "category_ids": ["category_6", "category_9"]
+  }
+]

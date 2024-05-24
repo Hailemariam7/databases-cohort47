@@ -1,0 +1,212 @@
+[
+  {
+    "recipe_id": 8,
+    "recipe_name": "No-Bake Cheesecake",
+    "cooking_time": 0,
+    "preparation_time": 180,
+    "spiciness": 0,
+    "categories": ["Cake", "No-Bake", "Vegetarian"],
+    "ingredients": [
+      {
+        "ingredient_name": "Condensed milk",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Cream Cheese",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Lemon Juice",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Pie Crust",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Cherry Jam",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      }
+    ],
+    "directions": [
+      { "step_number": 1, "instruction": "Beat Cream Cheese" },
+      { "step_number": 2, "instruction": "Add Condensed Milk and blend" },
+      { "step_number": 3, "instruction": "Add Lemon Juice and blend" },
+      { "step_number": 4, "instruction": "Add the mix to the pie crust" },
+      { "step_number": 5, "instruction": "Spread the Cherry Jam" },
+      { "step_number": 6, "instruction": "Place in refrigerator for 3 hours" }
+    ]
+  },
+  {
+    "recipe_id": 9,
+    "recipe_name": "Roasted Brussels Sprouts",
+    "cooking_time": 30,
+    "preparation_time": 20,
+    "spiciness": 1,
+    "categories": ["Vegan", "Gluten-Free"],
+    "ingredients": [
+      {
+        "ingredient_name": "Brussels Sprouts",
+        "quantity": null,
+        "unit": null,
+        "prep_type": "tailed and outer layers removed"
+      },
+      {
+        "ingredient_name": "Lemon juice",
+        "quantity": 50,
+        "unit": "ml",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Sesame seeds",
+        "quantity": 5,
+        "unit": "tablespoons",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Pepper",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Salt",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Olive oil",
+        "quantity": 3,
+        "unit": "tablespoon",
+        "prep_type": null
+      }
+    ],
+    "directions": [
+      { "step_number": 1, "instruction": "Preheat the oven" },
+      { "step_number": 2, "instruction": "Mix the ingredients in a bowl" },
+      { "step_number": 3, "instruction": "Spread the mix on a baking sheet" },
+      { "step_number": 4, "instruction": "Bake for 30 minutes" }
+    ]
+  },
+  {
+    "recipe_id": 10,
+    "recipe_name": "Mac & Cheese",
+    "cooking_time": 15,
+    "preparation_time": 10,
+    "spiciness": 1,
+    "categories": ["Vegetarian"],
+    "ingredients": [
+      {
+        "ingredient_name": "Macaroni",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Butter",
+        "quantity": 3,
+        "unit": "tablespoons",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Flour",
+        "quantity": 3,
+        "unit": "tablespoons",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Salt",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Pepper",
+        "quantity": null,
+        "unit": null,
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Milk",
+        "quantity": 250,
+        "unit": "ml",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Shredded Cheddar cheese",
+        "quantity": 500,
+        "unit": "grams",
+        "prep_type": "grated"
+      }
+    ],
+    "directions": [
+      { "step_number": 1, "instruction": "Cook Macaroni for 8 minutes" },
+      { "step_number": 2, "instruction": "Melt butter in a saucepan" },
+      { "step_number": 3, "instruction": "Add flour, salt, pepper and mix" },
+      { "step_number": 4, "instruction": "Add Milk and mix" },
+      { "step_number": 5, "instruction": "Cook until mix is smooth" },
+      { "step_number": 6, "instruction": "Add cheddar cheese" },
+      { "step_number": 7, "instruction": "Add the macaroni" }
+    ]
+  },
+  {
+    "recipe_id": 11,
+    "recipe_name": "Tamagoyaki Japanese Omelette",
+    "cooking_time": 5,
+    "preparation_time": 5,
+    "spiciness": 1,
+    "categories": ["Vegetarian", "Japanese"],
+    "ingredients": [
+      {
+        "ingredient_name": "Eggs",
+        "quantity": 4,
+        "unit": "units",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Soy sauce",
+        "quantity": 1,
+        "unit": "tablespoon",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Sugar",
+        "quantity": 1,
+        "unit": "tablespoon",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Salt",
+        "quantity": 1,
+        "unit": "teaspoon",
+        "prep_type": null
+      },
+      {
+        "ingredient_name": "Olive Oil",
+        "quantity": 2,
+        "unit": "tablespoon",
+        "prep_type": null
+      }
+    ],
+    "directions": [
+      { "step_number": 1, "instruction": "Beat the eggs" },
+      { "step_number": 2, "instruction": "Add soya sauce, sugar and salt" },
+      { "step_number": 3, "instruction": "Add oil to a sauce pan" },
+      { "step_number": 4, "instruction": "Bring to medium heat" },
+      { "step_number": 5, "instruction": "Add some mix to the sauce pan" },
+      { "step_number": 6, "instruction": "Let it cook for 1 minute" },
+      { "step_number": 7, "instruction": "Remove pan from fire" }
+    ]
+  }
+]

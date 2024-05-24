@@ -1,0 +1,54 @@
+[
+  { "_id": "direction_1", "instruction": "Boil pasta until al dente." },
+  { "_id": "direction_2", "instruction": "Cook bacon until crispy." },
+  { "_id": "direction_3", "instruction": "Mix eggs and cheese in a bowl." },
+  {
+    "_id": "direction_4",
+    "instruction": "Combine pasta with bacon, eggs, and cheese."
+  },
+  {
+    "_id": "direction_5",
+    "instruction": "Spread tomato sauce on prepared pizza dough."
+  },
+  {
+    "_id": "direction_6",
+    "instruction": "Top with slices of mozzarella and fresh basil."
+  },
+  {
+    "_id": "direction_7",
+    "instruction": "Bake in preheated oven at 220C for 15 minutes."
+  },
+  { "_id": "direction_8", "instruction": "Brown chicken pieces in a skillet." },
+  { "_id": "direction_9", "instruction": "Add curry powder and other spices." },
+  {
+    "_id": "direction_10",
+    "instruction": "Pour in coconut milk and simmer until chicken is cooked through."
+  },
+  { "_id": "direction_11", "instruction": "Beat Cream cheese" },
+  { "_id": "direction_12", "instruction": "Add condensed Milk and blend" },
+  { "_id": "direction_13", "instruction": "Add lemon juice and blend" },
+  { "_id": "direction_14", "instruction": "Add the mix to the pie crust" },
+  { "_id": "direction_15", "instruction": "Spread the Cherry Jam" },
+  {
+    "_id": "direction_16",
+    "instruction": "Place in the refrigerator for 3 hours"
+  },
+  { "_id": "direction_17", "instruction": "Preheat the oven" },
+  { "_id": "direction_18", "instruction": "Mix the ingredients in a bowl" },
+  { "_id": "direction_19", "instruction": "Spread the mix on baking sheet" },
+  { "_id": "direction_20", "instruction": "Bake for 30 minutes" },
+  { "_id": "direction_21", "instruction": "Cook Macaroni for 8 minutes" },
+  { "_id": "direction_22", "instruction": "Melt butter in a saucepan" },
+  { "_id": "direction_23", "instruction": "Add flour, salt, pepper and mix" },
+  { "_id": "direction_24", "instruction": "Add milk and mix" },
+  { "_id": "direction_25", "instruction": "Cook until mix is smooth" },
+  { "_id": "direction_26", "instruction": "Add Cheddar Cheese and mix" },
+  { "_id": "direction_27", "instruction": "Add the Macaroni to the mix" },
+  { "_id": "direction_28", "instruction": "Beat eggs" },
+  { "_id": "direction_29", "instruction": "Add sugar and mix" },
+  { "_id": "direction_30", "instruction": "Add salt and soy sauce" },
+  { "_id": "direction_31", "instruction": "Add water" },
+  { "_id": "direction_32", "instruction": "Heat the pan" },
+  { "_id": "direction_33", "instruction": "Pour mix on the pan" },
+  { "_id": "direction_34", "instruction": "Roll the omelette" }
+]

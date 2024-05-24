@@ -1,0 +1,11 @@
+[
+  { "_id": "category_1", "name": "Italian" },
+  { "_id": "category_2", "name": "Pizza" },
+  { "_id": "category_3", "name": "Indian" },
+  { "_id": "category_4", "name": "Dessert" },
+  { "_id": "category_5", "name": "No-Bake" },
+  { "_id": "category_6", "name": "Quick & Easy" },
+  { "_id": "category_7", "name": "Vegetarian" },
+  { "_id": "category_8", "name": "Healthy" },
+  { "_id": "category_9", "name": "Japanese" }
+]
