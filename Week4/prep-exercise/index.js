@@ -1,17 +1,14 @@
 const fs = require("fs");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ServerApiVersion } = require("mongodb");
 require("dotenv").config();
 
 async function main() {
   const uri = process.env.MONGODB_URI;
-  if (!uri) {
-    console.error("MongoDB URI is not set in environment variables");
-    process.exit(1);
-  }
 
-  const client = new MongoClient(uri, {
+  const client = new MongoClient(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverApi: ServerApiVersion.v1,
   });
 
   try {
