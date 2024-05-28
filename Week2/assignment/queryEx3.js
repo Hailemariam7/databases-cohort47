@@ -15,10 +15,11 @@ connection.connect(function (err) {
 
   console.log("Connected to MySQL database");
 
-  // Query to print names of all authors and their corresponding mentors
+  // Updated query to print names of all authors and their corresponding mentors
   const query1 = `
-    SELECT a.author_name, mentor
+    SELECT a.author_name AS author, m.author_name AS mentor
     FROM authors AS a
+    LEFT JOIN authors AS m ON a.mentor = m.author_id;
   `;
 
   // Query to print all columns of authors and their published paper_title
